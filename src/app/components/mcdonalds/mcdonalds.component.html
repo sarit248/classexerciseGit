@@ -1,0 +1,29 @@
+<div class="meals">
+<div *ngIf="isNight">{{ discount }}% discount on all products!</div>
+        <!-- <p>Only now, on {{ date | hh:'hh' }} - {{ discount }}% discount on all products!</p> -->
+
+
+    <table border="1" align="center">
+
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        <tr *ngFor="let m of meals">
+            <td> {{m.mealName}}</td>
+            <td> {{m.price}}</td>
+            <td>
+                <img src='{{m.image}}'>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="math">
+    <h3>
+       
+        meal's Average: {{average }}
+
+    </h3>
+</div>

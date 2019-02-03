@@ -1,0 +1,28 @@
+<div *ngIf="singleUser">
+
+    <h3>Name: {{ singleUser.name }}</h3>
+    <h3>email: {{singleUser.email}}</h3>
+
+</div>
+
+<div *ngIf="singlePhoto">
+    <app-thumbnail source="{{singlePhoto.thumbnailUrl}}.jpg" 
+      length="{{imageWidth}}"> 
+    <!-- length="50" -->
+
+    </app-thumbnail>
+</div>
+
+<!-- <img #homeImage src="/assets/images/home.png" [width]="imageWidth"> -->
+
+
+ <!-- Event Binding:  -->
+<button (click)="decrease()">&darr;</button>
+<button (click)="reset()">&harr;</button>
+<button (click)="increase()">&uarr;</button> 
+
+
+<!-- Two Way Binding: -->
+<input type="range" min="100" max="300" step="10" [(ngModel)]="imageWidth">
+
+<span>Width: {{ imageWidth }} Pixels</span>

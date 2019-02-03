@@ -1,0 +1,22 @@
+input, button, textarea {
+    width: 400px;
+    font-size: x-large;
+    margin: 10px;
+}
+
+span {
+    margin: 10px;
+    text-align: left;
+    color: red;
+    position: absolute;
+}
+
+.ng-dirty.ng-invalid:not(form) {
+    background-color: pink;
+    border: 2px solid red;
+}
+
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+    background-color: pink;
+    border: 2px solid red;
+}

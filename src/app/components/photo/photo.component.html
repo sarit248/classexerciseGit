@@ -1,0 +1,21 @@
+<img #preview>
+
+<table border="1" align="center">
+
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Image</th>
+    </tr>
+    <tr *ngFor="let p of photos">
+        <td> {{p.id}}</td>
+        <td> {{p.title}}</td>
+        <td>
+            <app-thumbnail 
+            source="{{p.thumbnailUrl}}.jpg" 
+            length="50" 
+            (myClick)="preview.src=$event">
+            </app-thumbnail>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,22 @@
+<h2>Here are JhonBryce Users:</h2>
+
+<table border="1" align="center">
+
+    <tr>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>City</th>
+    </tr>
+    <tr *ngFor="let a of allUserS">
+
+        <td>
+            <a routerLink="/user-details/{{a.id}}">{{a.name}}</a>
+        </td>
+        <td> {{a.username}}</td>
+        <td> {{a.email}}</td>
+        <td> {{a.phone}}</td>
+        <td> {{a.address.city}}</td>
+    </tr>
+</table>

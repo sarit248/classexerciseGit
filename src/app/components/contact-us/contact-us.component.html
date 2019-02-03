@@ -1,0 +1,68 @@
+<form #myForm="ngForm" (ngSubmit)="send()">
+
+        <div>
+            <mat-form-field>
+                <input matInput type="text" name="firstName" [(ngModel)]="contactUs.firstName" placeholder="First Name..." autofocus required
+                    #firstName="ngModel">
+            </mat-form-field>
+            <span *ngIf="firstName.dirty && firstName.invalid">Missing First Name.</span>
+        </div>
+    
+        <div>
+            <mat-form-field>
+                <input matInput type="text" name="lastName" [(ngModel)]="contactUs.lastName" placeholder="Last Name..." required #lastName="ngModel">
+            </mat-form-field>
+            <span *ngIf="lastName.dirty && lastName.invalid">Missing Last Name.</span>
+        </div>
+    
+        <div>
+            <mat-form-field>
+                <input matInput type="email" name="email" [(ngModel)]="contactUs.email" placeholder="Email..." email #email="ngModel">
+            </mat-form-field>
+            <span *ngIf="email.dirty && email.invalid">Invalid Email.</span>
+        </div>
+    
+        <div>
+            <mat-form-field>
+                <textarea matInput type="text" name="message" [(ngModel)]="contactUs.message" placeholder="Message..." required #message="ngModel"></textarea>
+            </mat-form-field>
+            <span *ngIf="message.dirty && message.invalid">Missing Message.</span>
+        </div>
+    
+        <div>
+            <button [disabled]="myForm.form.invalid">Send</button>
+        </div>
+    
+    </form>
+    
+    
+
+
+<!-- <form #myForm="ngForm" (ngSubmit)="send()">
+
+    <div>
+        <input type="text" name="firstName" [(ngModel)]="contactUs.firstName" placeholder="First Name..." autofocus required #firstName="ngModel">
+        <span *ngIf="firstName.dirty && firstName.invalid">Missing First Name.</span>
+    </div>
+
+    <div>
+        <input type="text" name="lastName" [(ngModel)]="contactUs.lastName" placeholder="Last Name..." required #lastName="ngModel">
+        <span *ngIf="lastName.dirty && lastName.invalid">Missing Last Name.</span>
+    </div>
+
+    <div>
+        <input type="email" name="email" [(ngModel)]="contactUs.email" placeholder="Email..." email #email="ngModel">
+        <span *ngIf="email.dirty && email.invalid">Invalid Email.</span>
+    </div>
+
+    <div>
+        <textarea type="text" name="message" [(ngModel)]="contactUs.message" placeholder="Message..." required #message="ngModel"></textarea>
+        <span *ngIf="message.dirty && message.invalid">Missing Message.</span>
+    </div>
+
+
+    <div>
+        <button [disabled]="myForm.form.invalid">send </button>
+    </div>
+
+</form> -->
